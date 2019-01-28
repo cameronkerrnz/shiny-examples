@@ -10,4 +10,5 @@
 # user, so run stuff here, but avoid setup tasks that would require
 # root privileges.
 
-exec shiny-server >> /var/log/shiny-server.log 2>&1
+exec shiny-server
+
