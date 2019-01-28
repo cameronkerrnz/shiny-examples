@@ -128,3 +128,10 @@ RUN R -e "devtools::install_github('jcheng5/bubbles')"
 
 # Install latest shiny from GitHub
 RUN R -e "devtools::install_github('rstudio/shiny')"
+
+RUN install -d -o root -g root -m 0775 /var/log/shiny-server
+
+COPY shiny-server.openshift.sh /usr/bin/shiny-server.sh
+COPY uid_entrypoint.sh /usr/bin/uid_entrypoint.sh
+RUN chmod g=u /etc/passwd
+ENTRYPOINT [ "uid_entrypoint" ]
