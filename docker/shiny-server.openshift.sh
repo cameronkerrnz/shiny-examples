@@ -11,4 +11,3 @@
 # root privileges.
 
 exec shiny-server
-
